@@ -18,7 +18,7 @@ function randomSpeed() {
 }
 
 function randomCoordinate(max, size) {
-  return Math.floor(Math.random() * (max - size - 4) + 2);
+  return Math.floor(Math.random() * (max - size - 8) + 4);
 }
 
 function randomColor() {
@@ -48,6 +48,8 @@ function changeBall(event) {
 
 refs.ball.addEventListener('click', changeBall);
 refs.ball.addEventListener('touchstart', changeBall);
+refs.ball.addEventListener('mousedown', changeBall);
+refs.ball.addEventListener('mouseover', changeBall);
 
 ballData.intervalId = setInterval(() => {
   ballData.ballX += ballData.speedX;
